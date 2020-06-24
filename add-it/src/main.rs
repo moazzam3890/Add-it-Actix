@@ -15,7 +15,7 @@ async fn gettin(num: web::Path<Num>) -> Result<String> {
 async fn main() ->std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
-            .route("/get//{number}", web::get().to(gettin))
+            .route("/get/{number}", web::get().to(gettin))
     })
     .bind("127.0.0.1:8088")?
     .run()
